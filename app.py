@@ -1,5 +1,5 @@
 import os
-
+import pandas as pd
 from matplotlib import pyplot as plt
 from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
@@ -75,7 +75,7 @@ def make_forecast(selection):
     return fig
 
 
-df = load_data(FILEPATH)
+df = load_data('data.json')
 st.write("# COVID Forecast")
 
 selected_series = st.selectbox("Select a data set:", (ALL, CASES, DEATHS, RECOVERIES))
